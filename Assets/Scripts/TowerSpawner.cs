@@ -10,7 +10,7 @@ public class TowerSpawner : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit) && hit.collider.GetComponent<Floor>() != null) {
+            if (Physics.Raycast(ray, out hit) && hit.transform.GetComponent<Floor>() != null) {
                 Instantiate(tower, hit.point, Quaternion.identity);
             }
         }

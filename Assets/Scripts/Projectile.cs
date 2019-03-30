@@ -20,7 +20,9 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision) {
         var enemy = collision.gameObject.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null) {
             Destroy(enemy.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

@@ -12,7 +12,6 @@ public class Tower : MonoBehaviour {
     private float _coolDownTimer = 0f;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("entered tower trigger");
         if (other.gameObject.GetComponent<Enemy>() != null) {
             _target = other.transform;
         }
